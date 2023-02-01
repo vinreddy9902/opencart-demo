@@ -23,6 +23,14 @@ public class HomePage extends BasePage{
 	@FindBy(xpath="//a[contains(text(),'Login')]") // This element is added in step 6
 	WebElement linklogin;
 	
+	@FindBy(xpath="//input[@placeholder='Search']") // This element will be used in search product test.
+	WebElement txtSearchbox;
+	
+	@FindBy(xpath="//div[@id='search']//button[@type='button']")
+	WebElement btnSearch;
+	
+	
+	
 	
 	// To Write Action methods
 	
@@ -41,5 +49,15 @@ public class HomePage extends BasePage{
 		linklogin.click();
 	}
 	
+	public void enterProductName(String pName)   //For Search Product Test
+	{
+		txtSearchbox.sendKeys(pName);
+	}
 	
+	public void clickSearch()  //For Search Product Test
+	{
+		btnSearch.click();
+	}
+	
+		
 }
