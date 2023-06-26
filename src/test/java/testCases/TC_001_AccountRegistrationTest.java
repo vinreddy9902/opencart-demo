@@ -27,16 +27,16 @@ public class TC_001_AccountRegistrationTest extends BaseClass{
 		logger.info("Clicked on Register link...");
 		
 		AccountRegistrationPage repage= new AccountRegistrationPage(driver);
-		repage.setFirstname(randomString().toUpperCase()); // Randomly generated first name 
+		repage.setFirstname(randomString().toUpperCase()); // Randomly generated first name.
 		logger.info("Provided first name...");
 		
-		repage.setLastname(randomString().toUpperCase()); // randomly generated last name
+		repage.setLastname(randomString().toUpperCase()); // Randomly generated last name.
 		logger.info("Provided last name...");
 		
-		repage.setEmail(randomString()+ "@gmail.com"); // Randomly generated string
+		repage.setEmail(randomString()+ "@gmail.com"); // Randomly generated string.
 		logger.info("Provided email address...");
 		 
-		String password= randomAlphanumeric(); // randomly generated password
+		String password= randomAlphanumeric(); // Randomly generated password.
 		repage.setPassword(password);
 		logger.info("Provided password...");
 		

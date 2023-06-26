@@ -24,10 +24,10 @@ public class TC_002_LoginTest extends BaseClass {
 		
 		LoginPage lp= new LoginPage(driver);
 		
-		lp.setEmail(rb.getString("email")); // valid email, get it from properties file
+		lp.setEmail(rb.getString("email")); // Valid Email, get it from Properties file.
 		logger.info(" Provided Valid email...");
 		
-		lp.setPassword(rb.getString("password")); // valid password, get it from properties file
+		lp.setPassword(rb.getString("password")); // Valid Password, get it from Properties file.
 		logger.info(" Provided Valid Password...");
 		
 		lp.clickLoginbtn();

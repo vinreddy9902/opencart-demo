@@ -24,16 +24,15 @@ public class TC_004_SearchProductTest extends BaseClass {
 		SearchPage sp= new SearchPage(driver);
 		sp.isProductExist("MacBook");
 		
-		Assert.assertEquals(sp.isProductExist("MacBook"),true); // Validation for the right product
+		Assert.assertEquals(sp.isProductExist("MacBook"),true); // Validation for the product.
 		}
 		catch(Exception e)
 		{
-			Assert.fail();  // if the selected product is not equals to the existed product
+			Assert.fail(); // If the selected product is not equal to the existed product.
 		}
 		
 		
 		logger.info("*** Finished TC_004_SearcgProductTest ***");
-		
 		
 	}
 	

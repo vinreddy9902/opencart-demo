@@ -2,6 +2,9 @@ package utilities;
 
 
 	import java.io.File;
+
+
+
 	import java.io.FileInputStream;
 	import java.io.FileOutputStream;
 	import java.io.IOException;
@@ -39,7 +42,7 @@ package utilities;
 			int rowcount=sheet.getLastRowNum();
 			workbook.close();
 			fi.close();
-			return rowcount;		
+			return rowcount;
 		}
 		
 		public int getCellCount(String sheetName,int rownum) throws IOException
@@ -80,7 +83,7 @@ package utilities;
 		public void setCellData(String sheetName,int rownum,int colnum,String data) throws IOException
 		{
 			File xlfile=new File(path);
-			if(!xlfile.exists())    // If file not exists then create new file
+			if(!xlfile.exists())    // If file not exists then create new file.
 			{
 			workbook=new XSSFWorkbook();
 			fo=new FileOutputStream(path);
@@ -90,11 +93,11 @@ package utilities;
 			fi=new FileInputStream(path);
 			workbook=new XSSFWorkbook(fi);
 				
-			if(workbook.getSheetIndex(sheetName)==-1) // If sheet not exists then create new Sheet
+			if(workbook.getSheetIndex(sheetName)==-1) // If sheet not exists then create new sheet.
 				workbook.createSheet(sheetName);
 			sheet=workbook.getSheet(sheetName);
 						
-			if(sheet.getRow(rownum)==null)   // If row not exists then create new Row
+			if(sheet.getRow(rownum)==null)   // If row not exists then create new row.
 					sheet.createRow(rownum);
 			row=sheet.getRow(rownum);
 			
@@ -143,11 +146,12 @@ package utilities;
 			style.setFillForegroundColor(IndexedColors.RED.getIndex());
 			style.setFillPattern(FillPatternType.SOLID_FOREGROUND);  
 			
-			cell.setCellStyle(style);		
+			cell.setCellStyle(style);	
 			workbook.write(fo);
 			workbook.close();
 			fi.close();
 			fo.close();
+			
 		}
 		
 	}

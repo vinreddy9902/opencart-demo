@@ -2,6 +2,7 @@ package utilities;
 
 import java.io.IOException;
 
+
 import org.testng.annotations.DataProvider;
 
 public class DataProviders {
@@ -11,16 +12,16 @@ public class DataProviders {
 	@DataProvider(name="LoginData")
 	public String [][] getData() throws IOException
 	{
-		String path=".\\testData\\Copy of Opencart_LoginData.xlsx"; // Path of xl file 
+		String path=".\\testData\\Copy of Opencart_LoginData.xlsx"; // Path of excel file 
 		
 		ExcelUtility xlutil=new ExcelUtility(path);//creating an object for XLUtility
-		int totalrows=xlutil.getRowCount("Sheet1");	
+		int totalrows=xlutil.getRowCount("Sheet1");
 		int totalcols=xlutil.getCellCount("Sheet1",1);
 		
 		//created for two dimension array which can store the data user and password
 		String logindata[][]=new String[totalrows][totalcols];
 		
-		for(int i=1;i<=totalrows;i++)//1   //read the data from xl storing in two dimensional array 
+		for(int i=1;i<=totalrows;i++)//1   //read the data from excel storing in two dimensional array 
 		{
 			for(int j=0;j<totalcols;j++) //0    i is for rows j is for columns
 			{
@@ -29,7 +30,7 @@ public class DataProviders {
 			
 		}
 		
-		return logindata;//returning two dimensional array
+		return logindata; // returning two dimensional array.
 			
 			
 	}

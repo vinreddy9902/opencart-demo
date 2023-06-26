@@ -3,6 +3,8 @@ package pageObjects;
 
 
 import org.openqa.selenium.WebDriver;
+
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -15,7 +17,7 @@ public class AccountRegistrationPage extends BasePage {
 	}
 	
 	
-	// To identify elements in Registration Page
+	// To identify elements in Registration Page.
 	
 	@FindBy(xpath="//input[@id='input-firstname']")
 	WebElement txtFirstname;
@@ -35,7 +37,7 @@ public class AccountRegistrationPage extends BasePage {
 	@FindBy(xpath = "//button[contains(text(),'Continue')]")
 	WebElement btnContinue;
 	
-	// To write action methods 
+	// To write Action methods.
 	
 	public void setFirstname(String fname)
 	{

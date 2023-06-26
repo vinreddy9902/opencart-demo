@@ -1,6 +1,7 @@
 package utilities;
 
 import java.io.IOException;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -25,13 +26,13 @@ public class ExtentReportManager implements ITestListener{
 	String repName;
 
 	public void onStart(ITestContext testContext) {
-		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());// time stamp
+		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()); // Creating time stamp.
 		repName = "Test-Report-" + timeStamp + ".html";
 
-		sparkReporter = new ExtentSparkReporter(".\\reports\\" + repName);// specify location of the report
+		sparkReporter = new ExtentSparkReporter(".\\reports\\" + repName); // Specify the location report.
 
-		sparkReporter.config().setDocumentTitle("opencart Automation Report"); // Title of report
-		sparkReporter.config().setReportName("opencart Functional Testing"); // name of the report
+		sparkReporter.config().setDocumentTitle("opencart Automation Report"); // Title of the report.
+		sparkReporter.config().setReportName("opencart Functional Testing"); // Name of the report.
 		sparkReporter.config().setTheme(Theme.DARK);
 
 		extent = new ExtentReports();
@@ -75,19 +76,19 @@ public class ExtentReportManager implements ITestListener{
 		 * try { URL url = new
 		 * URL("file:///"+System.getProperty("user.dir")+"\\reports\\"+repName);
 		 * 
-		 * // Create the email message 
+		 * Create the email message.
 		 * ImageHtmlEmail email = new ImageHtmlEmail();
 		 * email.setDataSourceResolver(new DataSourceUrlResolver(url));
-		 * email.setHostName("smtp.googlemail.com"); 
+		 * email.setHostName("smtp.googlemail.com");
 		 * email.setSmtpPort(465);
 		 * email.setAuthenticator(new DefaultAuthenticator("pavanoltraining@gmail.com","password")); 
 		 * email.setSSLOnConnect(true);
-		 * email.setFrom("pavanoltraining@gmail.com"); //Sender
+		 * email.setFrom("vinodokande@gmail.com"); //Sender
 		 * email.setSubject("Test Results");
 		 * email.setMsg("Please find Attached Report....");
-		 * email.addTo("pavankumar.busyqa@gmail.com"); //Receiver 
-		 * email.attach(url, "extent report", "please check report..."); 
-		 * email.send(); // send the email 
+		 * email.addTo("kandevinod446@gmail.com"); //Receiver
+		 * email.attach(url, "extent report", "Please check report...");
+		 * email.send(); // Send the email
 		 * }
 		 * catch(Exception e) { e.printStackTrace(); }
 		 */

@@ -33,8 +33,9 @@ public class TC_003_LoginDDT extends BaseClass {
         MyAccountPage macc= new MyAccountPage(driver);
 		boolean targetpage=macc.isMyAccountPageExists();  // This method is created at my account page
 		
-		if (exp.equals("Valid")) 
-		{               // This is validations for positive and negative type of data
+		if (exp.equals("Valid")) // This is validations for positive and negative type of data.
+		{  
+			
 			if (targetpage == true) {
 				macc.clickLogout();
 				Assert.assertTrue(true);
